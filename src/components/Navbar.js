@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { navLinks } from '../data/data.js';
 import menu from "../images/menu.svg";
 import close from "../images/close.svg";
+// import portfolioImage from "../images/portfolio-rm-pix.png"
 
 const Navbar = () => {
     const [active, setActive] = useState("");
@@ -44,6 +45,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
+          {/* <img src={portfolioImage} alt='logo' className='w-9 h-9 object-contain'/> */}
         <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Rushabh Bhuptani
           </p>
