@@ -3,9 +3,10 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../components/Loader.js';
-import computerModel from './desktop_pc/scene_simple.gltf'; // Simplified model
 
 const Computer = ({ isMobile }) => {
+  const computerModel = useGLTF('./desktop_pc/scene.gltf', true);
+
   return (
     <mesh>
       <pointLight intensity={1} />
@@ -19,7 +20,7 @@ const Computer = ({ isMobile }) => {
       />
       <primitive
         object={computerModel.scene}
-        scale={isMobile ? 1.2 : 2.5}
+        scale={isMobile ? 2 : 2.5}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         />
     </mesh>
@@ -30,7 +31,7 @@ const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
 
     setIsMobile(mediaQuery.matches);
 
