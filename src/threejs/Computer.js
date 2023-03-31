@@ -3,10 +3,9 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../components/Loader.js';
+import computerModel from './desktop_pc/scene_simple.gltf'; // Simplified model
 
 const Computer = ({ isMobile }) => {
-  const computerModel = useGLTF('./desktop_pc/scene.gltf', true);
-
   return (
     <mesh>
       <pointLight intensity={1} />
