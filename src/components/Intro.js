@@ -1,20 +1,15 @@
 import React from 'react'
 import { styles } from "../styles";
-import ComputerCanvas from "../threejs/Computer.js";
 import { motion } from "framer-motion";
+import comp from "../images/comp-pix.png"
 
 const Intro = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} block sm:flex flex-row items-start gap-5`}
       >
-        {/* <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#6495ed]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div> */}
-
-        <div>
+        <div className="flex flex-col">
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className='text-[#6495ed]'>Rushabh</span>
           </h1>
@@ -22,11 +17,12 @@ const Intro = () => {
             I develop user interfaces and web applications<br className='sm:block hidden' />
           </p>
         </div>
+        <div className="flex justify-center items-center">
+          <img src={comp} className='mx-auto' alt='img'/> 
+        </div>
       </div>
 
-      <ComputerCanvas/>
-
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <motion.div className="mt-8 absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
@@ -42,9 +38,9 @@ const Intro = () => {
             />
           </div>
         </a>
-      </div>
+      </motion.div>
 
-      </section>
+    </section>
   )
 }
 
