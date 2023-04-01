@@ -8,7 +8,7 @@
   import nodejs from "../images/tech/nodejs.png"
   import mongodb from "../images/tech/mongodb.png"
   import git from "../images/tech/git.png"
-  import figma from "../images/tech/figma.png"
+  // import figma from "../images/tech/figma.png"
   import threejs from "../images/tech/threejs.svg"
   import brplast from "../images/brplast.png"
   import imageGenerator from "../images/imageGenerator.png"
@@ -84,10 +84,6 @@
     {
       name: "git",
       icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
     },
   ];
   
