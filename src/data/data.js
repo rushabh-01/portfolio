@@ -1,7 +1,7 @@
 
   import javascript from "../images/tech/javascript.png"
   // import html from "../images/tech/html.png"
-  import css from "../images/tech/css.png"
+  import css from "../images/tech/css2.png"
   import reactjs from "../images/tech/reactjs.png"
   import redux from "../images/tech/redux.png"
   import tailwind from "../images/tech/tailwind.png"
