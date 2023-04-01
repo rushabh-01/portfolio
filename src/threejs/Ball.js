@@ -1,10 +1,10 @@
-import React, { Suspense, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Decal, Float, Preload, useTexture } from '@react-three/drei'
+import React, { Suspense, useState, useEffect } from 'react'
+import { Canvas, useLoader } from '@react-three/fiber'
+import { OrbitControls, Decal, Float, Preload } from '@react-three/drei'
 import CanvasLoader from '../components/Loader'
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl])
+  const decal = useLoader('texture', props.imgUrl)
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25}>
@@ -32,14 +32,18 @@ const Cors = (props) => {
 
 const BallCanvas = ({ icon, cors }) => {
   const [imageLoaded, setImageLoaded] = useState(false)
-  const handleImageLoaded = () => setImageLoaded(true)
+  useEffect(() => {
+    const image = new Image()
+    image.onload = () => setImageLoaded(true)
+    image.src = icon
+  }, [icon])
 
   return (
     <Canvas frameloop="demand" dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         {!imageLoaded && <Cors corsUrl={cors} />}
-        <Ball imgUrl={icon} onImageLoaded={handleImageLoaded} />
+        {imageLoaded && <Ball imgUrl={icon} />}
       </Suspense>
 
       <Preload all />
