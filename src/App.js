@@ -6,7 +6,7 @@ import Intro from "./components/Intro";
 import Navbar from './components/Navbar';
 import Tech from "./components/Tech";
 import Work from "./components/Work";
-import ImageContainer from "./components/ImageContainer";
+// import ImageContainer from "./components/ImageContainer";
 
 function App() {
   return (
