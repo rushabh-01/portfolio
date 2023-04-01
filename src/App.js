@@ -6,7 +6,6 @@ import Intro from "./components/Intro";
 import Navbar from './components/Navbar';
 import Tech from "./components/Tech";
 import Work from "./components/Work";
-// import ImageContainer from "./components/ImageContainer";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
     <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Intro/>
-          {/* <ImageContainer/> */}
         </div>
         <About/>
         <Tech/>
