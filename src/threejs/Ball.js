@@ -1,10 +1,12 @@
-import React,{Suspense} from 'react'
+import React,{Suspense,useMemo } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls,Decal,Float,Preload,useTexture } from '@react-three/drei';
+import { OrbitControls,Decal,Float,Preload } from '@react-three/drei';
 import CanvasLoader from '../components/Loader';
+import * as THREE from 'three';
 
-const Ball = (props) => {
-    const [decal] = useTexture([props.imgUrl]);
+const Ball = ({imgUrl}) => {
+    // const [decal] = useTexture([props.imgUrl]);
+    const decalTexture = useMemo(() => new THREE.TextureLoader().load(imgUrl), [imgUrl]);
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
         {/* <ambientLight intensity={0.25}> */}
@@ -23,7 +25,7 @@ const Ball = (props) => {
                     scale={1}
                     // flatShading
                     position={[0,0,1]}
-                    map={decal}
+                    map={decalTexture}
                     />
                 </mesh>
             </directionalLight>
@@ -39,9 +41,12 @@ const BallCanvas = ({icon}) => {
       // dpr={[1, 2]}
       // gl={{ preserveDrawingBuffer: true }}
     >
+      <OrbitControls enableZoom={false} />
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+      <React.Suspense fallback={<CanvasLoader />}>
+        {/* <OrbitControls enableZoom={false} /> */}
         <Ball imgUrl={icon} />
+        </React.Suspense>
       </Suspense>
 
       <Preload all />
