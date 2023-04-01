@@ -30,7 +30,7 @@ const Ball = ({imgUrl}) => {
 }
 
 const BallCanvas = ({icon}) => {
-    const maxWebGLContexts = navigator.maxHardwareConcurrency || 10; // default to 4
+    const maxWebGLContexts = navigator.maxHardwareConcurrency || 4; // default to 4
     return (
         <Canvas
             gl={{
