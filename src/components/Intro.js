@@ -1,7 +1,7 @@
 import React from 'react'
 import { styles } from "../styles";
 import { motion } from "framer-motion";
-import comp from "../images/comp-pix.png"
+import comp from "../images/comp-pix-rm.png"
 
 const Intro = () => {
   return (
