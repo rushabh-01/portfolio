@@ -12,6 +12,7 @@
   import threejs from "../images/tech/threejs.svg"
   import brplast from "../images/brplast.png"
   import imageGenerator from "../images/imageGenerator.png"
+  import giphyGallery from "../images/giphy-gallery.png"
   
   export const navLinks = [
     {
@@ -148,6 +149,28 @@
       ],
       image: imageGenerator,
       source_code_link: "https://github.com/rushabh-01/image-generator",
+    },
+    {
+      name: "Gif Gallery",
+      description:
+        "Gif Gallery is a platform where user can search and save gifs to their computer",
+      tags: [
+        {
+          name: "next.js",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwind css",
+          color: "green-text-gradient",
+        },
+        {
+          name: "firebase",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: giphyGallery,
+      source_code_link: "https://github.com/rushabh-01/nextjs-giphy-firebase",
+      website_link: "https://nextjs-giphy-firebase.vercel.app/",
     },
   ];
   
